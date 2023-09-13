@@ -1,3 +1,5 @@
+import { NumbersCollection } from "./NumbersCollection";
+
 class Sorter {
     constructor(public collection: NumbersCollection) {};
 
@@ -6,14 +8,14 @@ class Sorter {
 
         for (let i = 0; i < length; i++) {
             for (let j = 0; j < length - i - 1; j++) {
-                if (this.collection.compare()) {
-                    this.collection.swap();
+                if (this.collection.compare(j, j + 1)) {
+                    this.collection.swap(j, j + 1);
                 }
             }
         }
     }
 }
 
-const sorter = new Sorter(new );
+const sorter = new Sorter(new NumbersCollection([1, 2, 3, 4, 5]));
 sorter.sort();
 console.log(sorter.collection);
