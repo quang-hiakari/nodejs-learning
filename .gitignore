@@ -1,3 +1,4 @@
+sort/node_modules/*
 node_modules/*
 .parcel-cache/*
 .parcel-cache/data.mdb
