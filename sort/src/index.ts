@@ -1,21 +1,20 @@
 import { NumbersCollection } from "./NumbersCollection";
+import { Sorter } from "./Sorter";
+import { CharactersCollection } from "./CharactersCollection";
+import { LinkedList } from "./LinkedList";
 
-class Sorter {
-    constructor(public collection: NumbersCollection) {};
+const numbersCollection = new NumbersCollection([50, -3, 39, 2]);
+numbersCollection.sort();
+console.log(numbersCollection.data);
 
-    sort(): void {
-        const { length } = this.collection;
 
-        for (let i = 0; i < length; i++) {
-            for (let j = 0; j < length - i - 1; j++) {
-                if (this.collection.compare(j, j + 1)) {
-                    this.collection.swap(j, j + 1);
-                }
-            }
-        }
-    }
-}
+const testString = new CharactersCollection('ddaXdsX');
+testString.sort();
+console.log(testString.data);
 
-const sorter = new Sorter(new NumbersCollection([1, 2, 3, 4, 5]));
-sorter.sort();
-console.log(sorter.collection);
+const linkedList = new LinkedList();
+linkedList.add(500);
+linkedList.add(-10);
+linkedList.add(-3);
+linkedList.sort();
+linkedList.print(); 
